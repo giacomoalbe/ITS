@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIP | Primo HTML</title>
+  <style>
+    #titolo {
+      color: #1233ff;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="titolo">Ciao io sono visibile!</h1>
+  <h1>Altro titolo</h1>
+  <input type="text" id="nome">
+  <button id="bottone">Saluta Ale!</button>
+
+  <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script>
+    var nome = "Giacomo";
+    var cognome = nome;
+
+    var button = document.getElementById("bottone");
+
+    function saluta() {
+      var nome = document.getElementById("nome");
+      var titolo = document.getElementById("titolo");
+
+      titolo.innerText = "Ciao, " + nome.value + "!"; 
+    }
+
+    button.onclick = saluta;
+
+    // $ = ehi jquery mi dai una mano?? THX XDXDXD
+    var names = [
+      "Alessia",  // Indice: 0
+      "Lorenzo",  // Indice: 1
+      "Giacomo",  // Indice: 2
+      "Giovanni", // Indice: 3
+      "LaSofy",   // Indice: 4
+      "Sarah"     // Indice: 5
+    ];
+
+    console.log(names);
+
+    var titoloQuery = $("#titolo");
+    titoloQuery.text("Ciaone");
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SalutaAntonioInVue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <button @click="cambiaScuderia('Ferrari')">Ferrari</button>
+      <button @click="cambiaScuderia('Mercedes')">Mercedes</button>
+      <button @click="cambiaScuderia('Mclaren')">Mclaren</button>
+    </div>
+    <div>
+      <h1>Il mio team di F1 preferito è: {{ scuderia }} </h1>
+    </div>
+  </div>
+  <script>
+    var vue = new Vue({
+      el: "#app",
+      data: {
+        scuderia: "Aston Martin",
+      },
+      methods: {
+        cambiaScuderia(nuovaScuderia) {
+          this.scuderia = nuovaScuderia;
+        },
+        cambiaInFerrari() {
+          this.scuderia = "Ferrari";
+        },
+        cambiaInMercedes() {
+          this.scuderia = "Mercedes";
+        },
+        cambiaInMclaren() {
+          this.scuderia = "Mclaren";
+        },
+      }
+    });
+  </script>
+</body>
+</html>

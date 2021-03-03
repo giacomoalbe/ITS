@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATMIX | AI & ML SaaS Platform for Cryptocurrency stock exchange in IoT</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>MATMIX</h1>
+        <div>
+            <label for="num1">Numero 1:</label>
+            <input type="number" id="num1" v-model="num1">
+            <label for="num2">Numero 2:</label>
+            <input type="number" id="num2" v-model="num2">
+        </div>
+        <div>
+            <button @click="add">+</button>
+            <button @click="sub">-</button>
+            <button @click="mul">*</button>
+            <button @click="div">/</button>
+            <button @click="reset">Reset</button>
+        </div>
+        <div>
+            <label for="live">Live reload:</label>
+            <input type="checkbox" id="live" v-model="liveReload">
+        </div>
+        <div v-if="!liveReload">
+            <div>Per visualizzare il risultato premi su uno dei pulsanti!</div>
+            {{ formula }}
+        </div>
+        <div v-if="num1 <= 10">
+            <div>Inserisci i valori dentro le caselle di testo e vedrai la magia di Disneyland Paris, dove i sogni diventano realtà!</div>
+            {{ num1 }}
+            {{ operazione }}
+            {{ num2 }}
+            =
+            {{ risultato }}
+        </div>
+    </div>
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                num1: "",
+                num2: "",
+                operazione: "",
+                formula: "",
+                liveReload: false,
+                risultato: "",
+            },
+            methods: {
+                add() {
+                    this.operazione = "+";
+
+                    this.risultato =
+                        parseInt(this.num1) +
+                        parseInt(this.num2);
+
+                    this.formula =
+                        this.num1 +
+                        " " +
+                        this.operazione +
+                        " " +
+                        this.num2 +
+                        " = " +
+                        this.risultato;
+                },
+                sub() {
+                    this.operazione = "-";
+
+                    this.risultato =
+                        parseInt(this.num1) -
+                        parseInt(this.num2);
+
+                    this.formula =
+                        this.num1 +
+                        " " +
+                        this.operazione +
+                        " " +
+                        this.num2 +
+                        " = " +
+                        this.risultato;
+                },
+                mul() {
+                    this.operazione = "*";
+
+                    this.risultato =
+                        parseInt(this.num1) *
+                        parseInt(this.num2);
+
+                    this.formula =
+                        this.num1 +
+                        " " +
+                        this.operazione +
+                        " " +
+                        this.num2 +
+                        " = " +
+                        this.risultato;
+                },
+                div() {
+                    this.operazione = "/";
+
+                    this.risultato =
+                        parseInt(this.num1) /
+                        parseInt(this.num2);
+
+                    this.formula =
+                        this.num1 +
+                        " " +
+                        this.operazione +
+                        " " +
+                        this.num2 +
+                        " = " +
+                        this.risultato;
+                },
+                reset() {
+                    this.num1 = "";
+                    this.num2 = "";
+                    this.operazione = "";
+                    this.risultato = "";
+                    this.formula = "";
+                }
+            }
+        });
+
+        var oggettoDiJavascript = {
+            key: "valore",
+            key2: "valore2",
+            keyObject: {
+                key1: "one",
+                key2: "shish",
+                key3: "biquoos",
+            }
+        }
+
+        let csvComuni = "Nome,codice;Verona,L781";
+
+        let valoriComuni = csvComuni.split(";")
+        valoriComuni.splice(0, 1);
+
+        let comuni = {};
+
+        valoriComuni.forEach((comune) => {
+            let tokens = comune.split(",");
+
+            comuni[tokens[0]] = tokens[1];
+        });
+
+        console.log(comuni);
+    </script>
+</body>
+
+</html>

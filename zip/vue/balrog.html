@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALROG | Tu non puoi passare!</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>BALROG</h1>
+        <label for="">Nome:</label>
+        <input type="text" v-model="nome">
+        <br>
+        <label for="">Cognome:</label>
+        <input type="text" v-model="cognome">
+        <br>
+        <label for="">Età:</label>
+        <input type="number" v-model="eta">
+        <br>
+        <label for="imma">Sono un Balrog</label>
+        <input id="imma" type="checkbox" v-model="immaBalrog">
+        <div v-if="immaBalrog && eta > 4000">
+            Tu non puoi passare, fiamma di Udun!
+        </div>
+        <div v-if="!immaBalrog || eta <= 4000">
+            Ok, non sei un Balrog, che bello oggi non muoriamo!
+        </div>
+    </div>
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                nome: "",
+                cognome: "",
+                eta: "",
+                immaBalrog: false,
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

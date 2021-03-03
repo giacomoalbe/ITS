@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO | Per chi ha la dipendenza dalle cose da fà!</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>TODO</h1>
+        <div>
+            <input type="text" v-model="newTodo">
+            <button @click="addTodo">Aggiungi</button>
+        </div>
+        <ul>
+            <li v-for="(todo, index) in todos">
+                {{ index }} 🦁 {{ todo }}
+                <button @click="completeTodo(index)">x</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var arrayz = [
+            "stringa 1",
+            "stringa 2",
+            "stringa 3",
+            "stringa 4",
+        ];
+
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                todos: [
+                    "Imparare a insegnare",
+                    "Bere il caffè",
+                    "Fare i soldi",
+                    "Diventare un cantante neomelodico di successo",
+                    "Diventare una modella di tute da lavoro",
+                    "Arrivare in fondo all'oceano, in apnea",
+                ],
+                newTodo: ""
+            },
+            methods: {
+                addTodo() {
+                    if (this.newTodo != "") {
+                        this.todos.push(this.newTodo);
+                        this.newTodo = "";
+                    }
+                },
+                completeTodo(index) {
+                    console.log("Voglio schiantare il todo: " + index);
+                    this.todos.splice(index, 1);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

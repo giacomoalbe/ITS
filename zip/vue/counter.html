@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIP | Intro a Vue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1 id="titolo">{{ message }}</h1>
+    <button id="bottone" @click="aggiungi">+</button>
+    <button id="bottone" @click="sottrai">-</button>
+  </div>
+
+  <script>
+    var vue = new Vue({
+      el: "#app",
+      data() {
+        return {
+          message: 0
+        }
+      },
+      methods: {
+        aggiungi() {
+          this.message = this.message + 1;
+
+        },
+        sottrai() {
+          this.message = this.message - 1;
+
+        }
+      }
+    });
+  </script>
+</body>
+</html>

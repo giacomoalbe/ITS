@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SalutaAntonioInVue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Ciao {{ nome }} {{ cognome }} e il mio Pietro preferito è {{ color }}!!!</h1>
+    <div>
+      <label for="nome">Nome</label>
+      <input type="text" id="chiappone" v-model="nome">
+    </div>
+    <div>
+      <label for="cognome">Cognome</label>
+      <input type="text" id="cognome" v-model="cognome">
+    </div>
+    <div>
+      <label for="colore">Colore</label>
+      <select id="colore" v-model="color">
+        <option value="rosso">😫</option>
+        <option value="arancione">🧡</option>
+        <option value="giallo">💛</option>
+        <option value="verde">🍀</option>
+        <option value="blu">📘</option>
+        <option value="indaco">🖤</option>
+        <option value="violetto">🎻</option>
+      </select>
+    </div>
+  </div>
+  <script>
+    var vue = new Vue({
+      el: "#app",
+      data() {
+        return {
+          nome: "Giacomo",
+          cognome: "Alberini",
+          color: "pietro",
+        }
+      },
+    });
+  </script>
+</body>
+</html>

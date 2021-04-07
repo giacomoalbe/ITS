@@ -7,6 +7,8 @@ import "./assets/app.css";
 import NewTodo from './components/NewTodo.vue';
 import TodoList from './components/TodoList.vue';
 import DoneList from './components/DoneList.vue';
+import CarList from './components/CarList.vue';
+import CuteDog from './components/CuteDog.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +24,14 @@ const routes = [
   {
     path: "/done",
     component: DoneList,
+  },
+  {
+    path: "/cars",
+    component: CarList,
+  },
+  {
+    path: "/cutedog",
+    component: CuteDog,
   },
   {
     path: "/",

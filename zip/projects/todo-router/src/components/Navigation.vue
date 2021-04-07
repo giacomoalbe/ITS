@@ -26,6 +26,14 @@ export default {
         {
           label: "Già Fatti",
           path: "/done"
+        },
+        {
+          label: "Lista Auto",
+          path: "/cars"
+        },
+        {
+          label: "CaneCarino",
+          path: "/cutedog"
         }
       ]
     };
